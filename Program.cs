@@ -18,7 +18,7 @@ namespace meizitu
                   .WriteTo.Console()
                   .CreateLogger();
 
-            Log.Information("开始日志操作：");
+            Log.Information("开始日志操作");
 
             Log.Information("文件将会保存到：" + basePath);
 
