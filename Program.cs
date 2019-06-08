@@ -24,7 +24,7 @@ namespace meizitu
 
             #region 获取用户输入的年份
             Log.Warning("   ");
-            Log.Warning("请输入年份：2012 <--> 2018 ： 回车开启！");
+            Log.Warning("请输入年份：2011 <--> 2018 ： 回车开启！");
 
             int year = 2018; //多少年
             try
@@ -40,9 +40,9 @@ namespace meizitu
             }
 
 
-            if (year < 2012)
+            if (year < 2011)
             {
-                Log.Debug("输入年份不正确，不能大于2012，请重新运行程序");
+                Log.Debug("输入年份不正确，不能大于2011，请重新运行程序");
 
                 Console.ReadKey();
             }
@@ -75,8 +75,9 @@ namespace meizitu
                 for (int k = 1; k <= proId; k++)
                 {
                     Log.Information("{0}年份,第{1}个月,第{2}个项目", year, i, proId);
-
-                    string fullBasePath = basePath + "\\" + year + i.ToString("00") + "\\" + proId.ToString("00");
+              
+                    string fullBasePath1 = Path.Combine( basePath , year + i.ToString("00"));
+                    string fullBasePath =Path.Combine( fullBasePath1, proId.ToString("00"));
                     if (Directory.Exists(fullBasePath))
                     {
                         Log.Information("此文件夹,图片可能已经有啦！");
